@@ -1,0 +1,13 @@
+#result {
+    color: brown;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#player1, #player2 {
+    font-family: fantasy;
+    color: cornflowerblue;
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+}
