@@ -110,8 +110,6 @@ $(".button2").on("click", function() {
 });
 
 guess.on("value", function(snap) {
-    pick1 = snap.val().guess1;
-    pick2 = snap.val().guess2;
 
     if ((snap.val().guess1) && (snap.val().guess2)) {
         var result = checkthewinner(pick1, pick2);
