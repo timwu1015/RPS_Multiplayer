@@ -87,8 +87,10 @@ player.on("value", function(snap) {
 });
 
 $(".button1").on("click", function() {
+    
     pick1 = $(this).val();
     $("#text1").text("wait for your opponent");
+
 
     guess.set({
         guess1: pick1,
@@ -97,6 +99,7 @@ $(".button1").on("click", function() {
 });
 
 $(".button2").on("click", function() {
+
     pick2 = $(this).val();
     $("#text2").text("wait for your opponent");
 
@@ -107,6 +110,9 @@ $(".button2").on("click", function() {
 });
 
 guess.on("value", function(snap) {
+    pick1 = snap.val().guess1;
+    pick2 = snap.val().guess2;
+
     if ((snap.val().guess1) && (snap.val().guess2)) {
         var result = checkthewinner(pick1, pick2);
         if (result === 1) {
