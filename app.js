@@ -114,13 +114,13 @@ guess.on("value", function(snap) {
     if ((snap.val().guess1) && (snap.val().guess2)) {
         var result = checkthewinner(pick1, pick2);
         if (result === 1) {
-            $("#result").text(name1 + " won!!!");
+            $("#result").text(name1 + " won!!! Next round stars in 3 seconds.");
             setTimeout(reset, 3000);
         } else if (result === 2) {
-            $("#result").text(name2 + " won!!!");
+            $("#result").text(name2 + " won!!! Next round stars in 3 seconds.");
             setTimeout(reset, 3000);
         } else {
-            $("#result").text("It is a tie!!!");
+            $("#result").text("It is a tie!!! Next round stars in 3 seconds.");
             setTimeout(reset, 3000);
         }
     }
