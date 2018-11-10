@@ -19,6 +19,10 @@ var name2 = "";
 var pick1 = "";
 var pick2 = "";
 
+var player1Wins = 0;
+var player2Wins = 0;
+var ties = 0;
+
 function checkthewinner(guess1, guess2) {
     if ((guess1 === "r") && (guess2 === "s")) {
         return 1;
@@ -56,6 +60,9 @@ $("#submit1").on("click", function(event) {
     $("#player1").text(name1);
     $("#name1").val("");
 
+    player1Wins = 0;
+    player2Wins = 0;
+    ties = 0;
 
     player.set({
         player1: name1,
@@ -69,6 +76,10 @@ $("#submit2").on("click", function(event) {
     name2 = $("#name2").val().trim();
     $("#player2").text(name2);
     $("#name2").val("");
+
+    player1Wins = 0;
+    player2Wins = 0;
+    ties = 0;
 
     player.set({
        player1: name1,
@@ -115,12 +126,18 @@ guess.on("value", function(snap) {
         var result = checkthewinner(pick1, pick2);
         if (result === 1) {
             $("#result").text(name1 + " won!!! Next round stars in 3 seconds.");
+            player1Wins++;
+            $("#wins").text(name1 + " score: " + player1Wins);
             setTimeout(reset, 3000);
         } else if (result === 2) {
             $("#result").text(name2 + " won!!! Next round stars in 3 seconds.");
+            player2Wins++;
+            $("#losses").text(name2 + " score:" + player2Wins);
             setTimeout(reset, 3000);
         } else {
             $("#result").text("It is a tie!!! Next round stars in 3 seconds.");
+            ties++;
+            $("#ties").text("ties: " + ties);
             setTimeout(reset, 3000);
         }
     }
