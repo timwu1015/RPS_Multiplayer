@@ -51,6 +51,9 @@ function reset() {
         guess2: ""
     })
 
+    $(".button1").show();
+    $(".button2").show();
+
 }
 
 $("#submit1").on("click", function(event) {
@@ -100,11 +103,13 @@ $(".button1").on("click", function() {
     pick1 = $(this).val();
     $("#text1").text("wait for your opponent");
 
-
     guess.set({
         guess1: pick1,
         guess2: pick2
     });
+
+    $(".button1").hide();
+    $(".button2").hide();
 });
 
 $(".button2").on("click", function() {
@@ -116,6 +121,8 @@ $(".button2").on("click", function() {
         guess1: pick1,
         guess2: pick2
     });
+    $(".button1").hide();
+    $(".button2").hide();
 });
 
 guess.on("value", function(snap) {
